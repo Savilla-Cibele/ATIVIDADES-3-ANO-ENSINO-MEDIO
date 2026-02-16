@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Bungee", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+body {
+  background-color: #0f0b5f;
+  color: #ffffff;
+}
+
+/* BANNER */
+
+.banner {
+  background: url("assets/images/banner.jpg") center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  color: #f5b942;
+}
+
+.overlay p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* CALENDÁRIO */
+
+.calendar-container {
+  padding: 40px;
+}
+
+.calendar-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar-header h2 {
+  color: #f5b942;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.day {
+  background: #1a167f;
+  border-radius: 16px;
+  padding: 15px;
+  min-height: 150px;
+  transition: 0.3s;
+}
+
+.day:hover {
+  transform: translateY(-5px);
+  background: #211ca8;
+}
+
+.date {
+  font-weight: bold;
+  color: #f5b942;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.event {
+  background: #2a24c9;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+
+/* Cores por matéria */
+
+.historia { border-left: 4px solid #f5b942; }
+.biologia { border-left: 4px solid #00ffcc; }
+.matematica { border-left: 4px solid #ff4d6d; }
+.ingles { border-left: 4px solid #4cc9f0; }
+
+/* Responsivo */
+
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .calendar-container {
+    padding: 20px;
+  }
+}
+
+.botao {
+     display: block;          /* importante */
+    margin: 30px auto 0;     /* auto centraliza horizontalmente */
+    background-color: #f5a000; /* Laranja */
+    color: #0026ff; /* Azul */
+    border: none;
+    padding: 10px 30px;
+    font-size: 13px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+
+}
