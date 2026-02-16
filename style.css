@@ -99,17 +99,6 @@ body {
 .matematica { border-left: 4px solid #ff4d6d; }
 .ingles { border-left: 4px solid #4cc9f0; }
 
-/* Responsivo */
-
-@media (max-width: 400px) {
-  .overlay h1 {
-    font-size: 2rem;
-  }
-
-  .calendar-container {
-    padding: 20px;
-  }
-}
 
 .botao {
      display: block;          /* importante */
@@ -120,12 +109,22 @@ body {
     padding: 10px 30px;
     font-size: 13px;
     font-weight: bold;
-    border-radius: 50px;
+    border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     text-decoration: none;
     text-align: center;
 
 }
+
+@media (max-width: 600px) {
+  .botao {
+    width: 80%;          /* controla largura */
+    padding: 12px 20px;  /* menos exagerado */
+    font-size: 14px;     /* melhora leitura */
+    border-radius: 12px; /* evita efeito pílula estranho */
+  }
+}
+
 
 
