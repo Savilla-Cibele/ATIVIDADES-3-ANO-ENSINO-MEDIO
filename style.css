@@ -101,20 +101,19 @@ body {
 
 
 .botao {
-     display: block;          /* importante */
-    margin: 30px auto 0;     /* auto centraliza horizontalmente */
-    background-color: #f5a000; /* Laranja */
-    color: #0026ff; /* Azul */
+    display: inline-block;   /* melhor que block */
+    margin: 20px auto 0;
+    background-color: #f5a000;
+    color: #0026ff;
     border: none;
-    padding: 10px 30px;
-    font-size: 13px;
+    padding: 12px 24px;
+    font-size: 14px;
     font-weight: bold;
-    border-radius: 12px;
+    border-radius: 12px;     /* remove efeito pílula */
     cursor: pointer;
-    transition: all 0.3s ease;
     text-decoration: none;
     text-align: center;
-
+    max-width: 220px;        /* impede deformação */
 }
 
 @media (max-width: 600px) {
