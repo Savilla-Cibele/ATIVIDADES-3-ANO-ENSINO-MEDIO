@@ -127,3 +127,19 @@ body {
     text-align: center;
 
 }
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+}
+

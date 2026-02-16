@@ -79,3 +79,19 @@ strong {
     padding: 15px;
   }
 }
+@media (max-width: 768px) {
+
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .menu {
+    flex-direction: column;
+  }
+
+}
+
