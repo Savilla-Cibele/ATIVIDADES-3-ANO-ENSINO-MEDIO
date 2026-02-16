@@ -101,7 +101,7 @@ body {
 
 /* Responsivo */
 
-@media (max-width: 600px) {
+@media (max-width: 400px) {
   .overlay h1 {
     font-size: 2rem;
   }
