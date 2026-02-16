@@ -1,15 +1,23 @@
+:root {
+  --bg-main: #0f0b5f;
+  --card-bg: #1a167f;
+  --card-hover: #211ca8;
+  --event-bg: #2a24c9;
+  --primary-yellow: #f5b942;
+  --button-yellow: #f5a000;
+  --button-blue: #0026ff;
+}
+
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Bungee", sans-serif;
-  font-weight: 600;
-  font-style: normal;
 }
 
-
 body {
-  background-color: #0f0b5f;
+  background-color: var(--bg-main);
   color: #ffffff;
 }
 
@@ -35,7 +43,7 @@ body {
 
 .overlay h1 {
   font-size: 3rem;
-  color: #f5b942;
+  color: var(--primary-yellow);
 }
 
 .overlay p {
@@ -47,6 +55,8 @@ body {
 
 .calendar-container {
   padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .calendar-header {
@@ -55,40 +65,40 @@ body {
 }
 
 .calendar-header h2 {
-  color: #f5b942;
+  color: var(--primary-yellow);
 }
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .day {
-  background: #1a167f;
+  background: var(--card-bg);
   border-radius: 16px;
   padding: 15px;
-  min-height: 150px;
-  transition: 0.3s;
+  min-height: 170px;
+  transition: 0.3s ease;
 }
 
 .day:hover {
   transform: translateY(-5px);
-  background: #211ca8;
+  background: var(--card-hover);
 }
 
 .date {
   font-weight: bold;
-  color: #f5b942;
+  color: var(--primary-yellow);
   display: block;
   margin-bottom: 10px;
 }
 
 .event {
-  background: #2a24c9;
+  background: var(--event-bg);
   padding: 8px;
   border-radius: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
   font-size: 0.85rem;
 }
 
@@ -99,7 +109,28 @@ body {
 .matematica { border-left: 4px solid #ff4d6d; }
 .ingles { border-left: 4px solid #4cc9f0; }
 
-/* Responsivo */
+/* BOTÃO */
+
+.botao {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: var(--button-yellow);
+  color: var(--button-blue);
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* RESPONSIVO */
 
 @media (max-width: 768px) {
   .overlay h1 {
@@ -110,22 +141,3 @@ body {
     padding: 20px;
   }
 }
-
-.botao {
-     display: block;          /* importante */
-    margin: 30px auto 0;     /* auto centraliza horizontalmente */
-    background-color: #f5a000; /* Laranja */
-    color: #0026ff; /* Azul */
-    border: none;
-    padding: 10px 30px;
-    font-size: 13px;
-    font-weight: bold;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    text-align: center;
-
-}
-
-
