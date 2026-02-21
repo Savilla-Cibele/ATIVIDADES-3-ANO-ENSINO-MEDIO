@@ -259,4 +259,8 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   text-decoration: line-through;
   opacity: 0.6;
 }
-
+/* 🔥 Quando marcar, o bloco da atividade fica verde */
+.event:has(input:checked) {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  transition: 0.3s ease;
+}

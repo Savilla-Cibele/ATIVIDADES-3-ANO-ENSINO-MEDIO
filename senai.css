@@ -127,7 +127,20 @@
   text-align: center;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
-
+   .botao1 {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: var(--button-yellow);
+  color: var(--button-blue); /* azul mantido */
+  font-family: "Bungee", sans-serif;
+  padding: 10px 70px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
 .botao:hover {
   transform: scale(1.05);
   opacity: 0.9;
