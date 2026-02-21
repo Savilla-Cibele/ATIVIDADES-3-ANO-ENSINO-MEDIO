@@ -1,0 +1,134 @@
+
+    :root {
+      --bg-main: #1E177D;
+      --card-bg: #2E2AAE;
+      --card-hover: #211ca8;
+      --event-bg: #2a24c9;
+      --primary-yellow: #F4B43A;
+      --button-yellow:#F2A000;
+      --button-blue: #0026FF;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      color: white;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--button-yellow);
+      margin-bottom: 50px;
+      font-family: 'Bungee', cursive;
+    }
+
+    .section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      color: var(--primary-yellow);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--primary-yellow);
+      padding-left: 10px;
+      font-family: 'Bungee', cursive;
+    }
+
+    .card {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: 0.3s ease;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      .bungee-regular {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+    }
+
+    .card:hover {
+      background-color: var(--card-hover);
+      transform: translateY(-5px);
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      background-color: var(--event-bg);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    th {
+      background-color: var(--button-blue);
+      color: white;
+      padding: 12px;
+      text-align: left;
+    }
+
+    td {
+      padding: 12px;
+      border-bottom: 1px solid var(--card-bg);
+    }
+
+    tr:hover {
+      background-color: var(--card-hover);
+    }
+
+    details summary {
+      cursor: pointer;
+      background-color: var(--button-yellow);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 15px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .materias {
+      list-style: none;
+      padding: 0;
+    }
+
+    .materias li {
+      background-color: var(--event-bg);
+      margin: 6px 0;
+      padding: 10px;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .materias li:hover {
+      background-color: var(--card-hover);
+    }
+
+    .botao {
+  display: inline-block;
+  margin-top: 15px;
+  background-color: var(--button-yellow);
+  color: var(--button-blue); /* azul mantido */
+  font-family: "Bungee", sans-serif;
+  padding: 20px 100px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}

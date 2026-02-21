@@ -18,9 +18,9 @@
   <header class="banner">
     <div class="overlay">
       <div class="gears">
-  <div class="gear"></div>
-  <div class="gear small"></div>
-</div>
+        <div class="gear"></div>
+        <div class="gear small"></div>
+      </div>
 
       <h1>Agenda Escolar</h1>
       <p>Organização acadêmica • 3º Ano • SESI</p>
@@ -37,40 +37,46 @@
 
       <div class="calendar-grid">
 
+        <!-- DIA 09 -->
         <article class="day">
           <span class="date">09</span>
           <div class="event biologia">
-            <span>
-              Biologia<br>
-              Estruturas do DNA - Fazer desenho pág. 16
-            </span>
+            <h4>Biologia</h4>
+            <label class="check-item">
+              <input type="checkbox" id="biologia-09">
+              <span>Estruturas do DNA - Fazer desenho pág. 16</span>
+            </label>
           </div>
           <a href="assets/images/estruturadna.png" class="botao" target="_blank" rel="noopener">
             Ver
           </a>
         </article>
 
+        <!-- DIA 22 -->
         <article class="day">
           <span class="date">22</span>
           <div class="event matematica">
-            <span>
-              Matemática<br>
-              Exercício pág. 20-22<br>
-              Apenas resposta
-            </span>
+            <h4>Matemática</h4>
+            <label class="check-item">
+              <input type="checkbox" id="matematica-22">
+              <span>Exercício pág. 20-22 (Apenas resposta)</span>
+            </label>
+
           </div>
           <a href="https://docs.google.com/document/d/1BLdw5W7n-ANiJRYHVGBkhF0PG45OtbuJLtlFZ-1attM/edit?hl=pt-br&tab=t.0" class="botao" target="_blank" rel="noopener">
             Ver
           </a>
         </article>
 
+        <!-- DIA 23 -->
         <article class="day">
           <span class="date">23</span>
           <div class="event ingles">
-            <span>
-              Inglês<br>
-              Apresentação gramatical
-            </span>
+            <h4>Inglês</h4>
+            <label class="check-item">
+              <input type="checkbox" id="ingles-23">
+              <span>Apresentação gramatical</span>
+            </label>
           </div>
         </article>
 
@@ -85,37 +91,71 @@
 
       <div class="calendar-grid">
 
+        <!-- DIA 03 -->
         <article class="day">
           <span class="date">03</span>
           <div class="event historia">
-            <span>
-              História<br>
-              Autoria - Entrega
-            </span>
+            <h4>História</h4>
+            <label class="check-item">
+              <input type="checkbox" id="historia-03">
+              <span>Autoria - Entrega</span>
+            </label>
           </div>
-          <a href="historia.html" class="botao" target="_blank" rel="noopener">
+          <a href="https://docs.google.com/document/d/1Kze_CXFuhyrC8w5Ro90KH0xiVlWC_wEm7_EMTMhCNHo/edit?usp=sharing" class="botao" target="_blank" rel="noopener">
             Ver
           </a>
         </article>
 
+        <!-- DIA 09 -->
         <article class="day">
           <span class="date">09</span>
           <div class="event historia">
-            <span>
-              História<br>
-              Resolução de problemas - Entrega
-            </span>
+            <h4>História</h4>
+            <label class="check-item">
+              <input type="checkbox" id="historia-09">
+              <span>Resolução de problemas - Entrega</span>
+            </label>
           </div>
-          <a href="historia.html" class="botao" target="_blank" rel="noopener">
+          <a href="https://docs.google.com/document/d/1Kze_CXFuhyrC8w5Ro90KH0xiVlWC_wEm7_EMTMhCNHo/edit?usp=sharing" class="botao" target="_blank" rel="noopener">
             Ver
           </a>
         </article>
-
       </div>
     </section>
 
+    
+   <div class="container-botoes">
+  <a href="https://www.sesieducacao.com.br/publico/" target="_blank" rel="noopener">
+    <img src="assets/images/logo_sesi_blue.png" alt="" class="botao1">
+  </a>
+  <a href="senai.html" target="_blank" rel="noopener">
+    <img src="assets/images/senai1.png" alt="Logo SENAI" class="botao1">
+  </a>
+  </div> 
+  
   </main>
+<script>
+  const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
+  // Quando a página carregar
+  window.addEventListener("load", () => {
+    checkboxes.forEach(checkbox => {
+      const savedState = localStorage.getItem(checkbox.id);
+
+      if (savedState === "true") {
+        checkbox.checked = true;
+      }
+    });
+  });
+
+  // Quando clicar no checkbox
+  checkboxes.forEach(checkbox => {
+    checkbox.addEventListener("change", () => {
+      localStorage.setItem(checkbox.id, checkbox.checked);
+    });
+  });
+</script>
 </body>
 </html>
+
 

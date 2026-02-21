@@ -60,11 +60,14 @@ body {
   padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .calendar-header {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .calendar-header h2 {
@@ -73,8 +76,10 @@ body {
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
+  border-radius: 10%;
+
 }
 
 .day {
@@ -84,6 +89,7 @@ body {
   min-height: 170px;
   transition: 0.3s ease;
   color: #ffffff; /* garante branco nos cards */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .day:hover {
@@ -183,17 +189,7 @@ body {
 @media (max-width: 768px) {
   .overlay h1 {
     font-size: 2rem;
-  }
-
-  .calendar-container {
-    padding: 20px;
-  }
-}
-
-.day,
-.day * {
-  color: #ffffff !important;
-}
+  }}
 
 .gears {
   position: absolute;
@@ -226,13 +222,41 @@ body {
   animation: rotateReverse 4s linear infinite;
 }
 
-@keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.container-botoes {
+  display: flex;
+  justify-content: center; /* centraliza no meio */
+  gap: 40px;               /* espaço entre SESI e SENAI */
+  margin-top: 40px;
+}
+.botao1 {
+  width: 100px;   /* controla tamanho da logo */
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background-color: var(--button-yellow);
+padding: 12px 20px;
+border-radius: 12px;
+box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-@keyframes rotateReverse {
-  from { transform: rotate(360deg); }
-  to { transform: rotate(0deg); }
+.botao1:hover {
+  transform: scale(1.05);
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.check-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+/* 🔥 Quando estiver marcado, risca o texto */
+.check-item input[type="checkbox"]:checked + span {
+  text-decoration: line-through;
+  opacity: 0.6;
 }
 
