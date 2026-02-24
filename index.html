@@ -71,10 +71,10 @@
         <!-- DIA 23 -->
         <article class="day">
           <span class="date">23</span>
-          <div class="event ingles">
-            <h4>Inglês</h4>
+          <div class="event portugues">
+            <h4>Português</h4>
             <label class="check-item">
-              <input type="checkbox" id="ingles-23">
+              <input type="checkbox" id="portugues-23">
               <span>Apresentação gramatical</span>
             </label>
           </div>
@@ -84,44 +84,84 @@
     </section>
 
     <!-- MARÇO -->
-    <section>
-      <div class="calendar-header">
-        <h2>Março</h2>
+<section>
+  <div class="calendar-header">
+    <h2>Março</h2>
+  </div>
+
+  <div class="calendar-grid">
+
+    <!-- DIA 16 -->
+    <article class="day">
+      <span class="date">16</span>
+      <div class="event historia">
+        <h4>História</h4>
+        <label class="check-item">
+          <input type="checkbox" id="historia-16">
+          <span>Autoria e resolução de problemas- ENTREGA</span>
+        </label>
       </div>
+      <a href="https://docs.google.com/document/d/1Kze_CXFuhyrC8w5Ro90KH0xiVlWC_wEm7_EMTMhCNHo/edit?usp=sharing" class="botao" target="_blank" rel="noopener">
+        Ver
+      </a>
+    </article>
 
-      <div class="calendar-grid">
-
-        <!-- DIA 03 -->
-        <article class="day">
-          <span class="date">03</span>
-          <div class="event historia">
-            <h4>História</h4>
-            <label class="check-item">
-              <input type="checkbox" id="historia-03">
-              <span>Autoria - Entrega</span>
-            </label>
-          </div>
-          <a href="https://docs.google.com/document/d/1Kze_CXFuhyrC8w5Ro90KH0xiVlWC_wEm7_EMTMhCNHo/edit?usp=sharing" class="botao" target="_blank" rel="noopener">
-            Ver
-          </a>
-        </article>
-
-        <!-- DIA 09 -->
-        <article class="day">
-          <span class="date">09</span>
-          <div class="event historia">
-            <h4>História</h4>
-            <label class="check-item">
-              <input type="checkbox" id="historia-09">
-              <span>Resolução de problemas - Entrega</span>
-            </label>
-          </div>
-          <a href="https://docs.google.com/document/d/1Kze_CXFuhyrC8w5Ro90KH0xiVlWC_wEm7_EMTMhCNHo/edit?usp=sharing" class="botao" target="_blank" rel="noopener">
-            Ver
-          </a>
-        </article>
+    <!-- DIA 03 -->
+    <article class="day">
+      <span class="date">03</span>
+      <div class="event geografia">
+        <h4>Geografia</h4>
+        <label class="check-item">
+          <input type="checkbox" id="geografia-03">
+          <span>ATIVIDADE DE DEBATE</span>
+        </label>
+        <p>a- Ideias de políticas públicas de incentivo a natalidade</p>
+        <p>b- ideias de políticas públicas para atender/assistir a população idosa crescente no Brasil</p>
       </div>
-    </section>
+    </article>
+
+    <!-- PRÓXIMA SEMANA -->
+    <article class="day">
+      <span class="date">02/03-06/03</span>
+      <div class="event matematica">
+        <h4>Matemática AV2</h4>
+        <label class="check-item">
+          <input type="checkbox" id="matematica-0203">
+          <span>PROVA (provavelmente na plataforma TEAMS, senão, impressa)</span>
+        </label>
+        <p>Assuntos: Princípio fundamental da contagem e princípio aditivo.</p>
+      </div>
+    </article>
+
+    <!-- ÚLTIMA SEMANA DE MARÇO -->
+    <article class="day">
+      <span class="date">23/03-24/03</span>
+      <div class="event matematica">
+        <h4>Matemática AV3</h4>
+        <label class="check-item">
+          <input type="checkbox" id="matematica-2303">
+          <span>SIMULADO DE MATEMÁTICA, impresso</span>
+        </label>
+      </div>
+    </article>
+
+    <!-- PROVA DE PORTUGUÊS -->
+    <article class="day">
+      <span class="date">02/03</span>
+      <div class="event portugues">
+        <h4>Português AV</h4>
+        <label class="check-item">
+          <input type="checkbox" id="portugues-0203">
+          <span>PROVA (provavelmente na plataforma TEAMS, senão, impressa)</span>
+        </label>
+        <p>ASSUNTOS: Concordância e Regência.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+     
+
 
     
    <div class="container-botoes">
@@ -154,6 +194,85 @@
       localStorage.setItem(checkbox.id, checkbox.checked);
     });
   });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const grids = document.querySelectorAll(".calendar-grid");
+
+  grids.forEach(grid => {
+    const cards = Array.from(grid.querySelectorAll(".day"));
+
+    cards.sort((a, b) => {
+      const dataA = a.querySelector(".date").textContent.trim();
+      const dataB = b.querySelector(".date").textContent.trim();
+
+      // Pega apenas o primeiro número da data (ex: 02/03-06/03 vira 02)
+      const numeroA = parseInt(dataA.match(/\d+/));
+      const numeroB = parseInt(dataB.match(/\d+/));
+
+      return numeroA - numeroB;
+    });
+
+    // Limpa e reinsere ordenado
+    cards.forEach(card => grid.appendChild(card));
+  });
+
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const hoje = new Date();
+  const anoAtual = hoje.getFullYear();
+  const mesAtual = hoje.getMonth(); // 0 = janeiro
+  const diaAtual = hoje.getDate();
+
+  const secoes = document.querySelectorAll("section");
+
+  secoes.forEach(secao => {
+
+    const tituloMes = secao.querySelector("h2");
+    if (!tituloMes) return;
+
+    const nomeMes = tituloMes.textContent.trim().toLowerCase();
+
+    const meses = {
+      "janeiro": 0,
+      "fevereiro": 1,
+      "março": 2,
+      "abril": 3,
+      "maio": 4,
+      "junho": 5,
+      "julho": 6,
+      "agosto": 7,
+      "setembro": 8,
+      "outubro": 9,
+      "novembro": 10,
+      "dezembro": 11
+    };
+
+    const mesNumero = meses[nomeMes];
+    if (mesNumero === undefined) return;
+
+    const cards = secao.querySelectorAll(".day");
+
+    cards.forEach(card => {
+      const textoData = card.querySelector(".date").textContent.trim();
+      const numeroDia = parseInt(textoData.match(/\d+/));
+
+      if (!numeroDia) return;
+
+      const dataCard = new Date(anoAtual, mesNumero, numeroDia);
+
+      if (dataCard < hoje.setHours(0,0,0,0)) {
+        card.classList.add("passado");
+      }
+    });
+
+  });
+
+});
 </script>
 </body>
 </html>

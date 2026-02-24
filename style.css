@@ -76,10 +76,8 @@ body {
 
 .calendar-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr); /* 🔥 Máximo 3 por linha */
   gap: 20px;
-  border-radius: 10%;
-
 }
 
 .day {
@@ -119,6 +117,8 @@ body {
 .biologia { border-left: 4px solid #00ffcc; }
 .matematica { border-left: 4px solid #ff4d6d; }
 .ingles { border-left: 4px solid #4cc9f0; }
+.portugues { border-left: 4px solid #00ff4c; }
+.geografia { border-left: 4px solid #412005; }
 
 /* BOTÃO */
 
@@ -184,12 +184,19 @@ body {
   to { transform: rotate(0deg); }
 }
 
-/* RESPONSIVO */
+/* RESPONSIVO GRID */
 
-@media (max-width: 768px) {
-  .overlay h1 {
-    font-size: 2rem;
-  }}
+@media (max-width: 900px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .calendar-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 .gears {
   position: absolute;
@@ -263,4 +270,16 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 .event:has(input:checked) {
   background: linear-gradient(135deg, #2ecc71, #27ae60);
   transition: 0.3s ease;
+}
+
+/* 🔥 Quando a data já passou */
+.day.passado {
+  background: #3a3a3a !important;
+  opacity: 0.6;
+  filter: grayscale(80%);
+  transition: 0.3s ease;
+}
+
+.day.passado .event {
+  background: #4a4a4a !important;
 }
