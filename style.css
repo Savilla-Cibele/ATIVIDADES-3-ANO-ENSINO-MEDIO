@@ -286,3 +286,18 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 .day.passado .event {
   background: #4a4a4a !important;
 }
+
+   botao{
+  display: inline-block;
+  margin-top: 15px;
+  background-color: var(--button-yellow);
+  color: var(--button-blue); /* azul mantido */
+  font-family: "Bungee", sans-serif;
+  padding: 20px 100px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 12px;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
