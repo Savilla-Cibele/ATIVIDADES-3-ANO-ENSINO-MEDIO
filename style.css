@@ -275,17 +275,6 @@ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
   transition: 0.3s ease;
 }
 
-/* 🔥 Quando a data já passou */
-.day.passado {
-  background: #3a3a3a !important;
-  opacity: 0.6;
-  filter: grayscale(80%);
-  transition: 0.3s ease;
-}
-
-.day.passado .event {
-  background: #4a4a4a !important;
-}
 
    botao{
   display: inline-block;
